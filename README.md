@@ -7,6 +7,7 @@ of why these commands are useful based on real-world experiences included.
     * [Force delete a pod](#force-delete-a-pod)
     * [Delete pods that are evicted](#delete-pods-that-are-evicted)
 * [Helpful Links](#useful-links)
+* [Contribution](#contribution)
 
 ## Pod Management
 ### Force delete a pod
@@ -26,6 +27,10 @@ You can run the following command in a cron job to periodically sterilize your
 cluster of pods of inactive evicted pods.
 
 `kubectl get po --all-namespaces --field-selector 'status.phase!=Running' -o json | kubectl delete -f -`
+
+## Contribution
+When submitting your helpful command, it would be doubly helpful to include some context
+on why the command is useful.
 
 ## Useful Links
 - [Kubectl Aliases](https://github.com/ahmetb/kubectl-aliases) - This will
