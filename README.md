@@ -2,7 +2,8 @@
 Commands that are useful for managing kubernetes setups. Explanations
 of why these commands are useful based on real-world experiences included.
 
-[Helpful Links](#useful-links)
+## Contents
+* [Helpful Links](#useful-links)
 
 ## Force delete a pod
 Sometimes pods aren't fully deleted due to external errors e.g. image doesn't
