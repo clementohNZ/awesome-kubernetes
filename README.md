@@ -2,6 +2,8 @@
 Commands that are useful for managing kubernetes setups. Explanations
 of why these commands are useful based on real-world experiences included.
 
+[Helpful Links](#useful-links)
+
 ## Force delete a pod
 Sometimes pods aren't fully deleted due to external errors e.g. image doesn't
 exist (but used to exist)... so they still appear in your deployment and take up resources. You
@@ -19,3 +21,7 @@ You can run the following command in a cron job to periodically sterilize your
 cluster of pods of inactive evicted pods.
 
 `kubectl get po --all-namespaces --field-selector 'status.phase!=Running' -o json | kubectl delete -f -`
+
+## Useful Links
+- [Kubectl Aliases](git@github.com:clementohNZ/useful-kubernetes-commands.git) - This will
+add shortcuts for Kubernetes and make your development faster.
