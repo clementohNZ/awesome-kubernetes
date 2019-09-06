@@ -3,9 +3,13 @@ Commands that are useful for managing kubernetes setups. Explanations
 of why these commands are useful based on real-world experiences included.
 
 ## Contents
+* [Pod Management](#pod-management)
+    * [Force delete a pod](#force-delete-a-pod)
+    * [Delete pods that are evicted](#delete-pods-that-are-evicted)
 * [Helpful Links](#useful-links)
 
-## Force delete a pod
+## Pod Management
+### Force delete a pod
 Sometimes pods aren't fully deleted due to external errors e.g. image doesn't
 exist (but used to exist)... so they still appear in your deployment and take up resources. You
 would like to delete them, but you can't delete them very easily through your
@@ -13,7 +17,7 @@ management UI or programmatically.
 
 `kubectl delete pod <PODNAME> --grace-period=0 --force --namespace <NAMESPACE>`
 
-## Delete pods that are evicted
+### Delete pods that are evicted
 Pods can be evicted from an instance for many reasons. Most commonly, this is due
 to a starvation of resources. These can end up polluting your cluster because
 they aren't automatically removed.
