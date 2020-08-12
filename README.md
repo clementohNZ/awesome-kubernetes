@@ -1,6 +1,7 @@
 # Awesome Kubernetes
 
 ## Contents
+* [Possible Errors](#possible-errors)
 * [Useful Kubernetes Commands](#useful-kubernetes-commands)
     * [Pod Management](#pod-management)
         * [Force delete a pod](#force-delete-a-pod)
@@ -8,7 +9,7 @@
 * [Helpful Links](#useful-links)
 * [Contribution](#contribution)
 
-## Errors
+## Possible Errors
 Common errors and the solutions.
 
 ### setenv: invalid argument
