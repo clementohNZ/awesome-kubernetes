@@ -43,6 +43,35 @@ You can run the following command in a cron job to periodically sterilize your
 cluster of pods of inactive evicted pods.
 
 `kubectl get po --all-namespaces --field-selector 'status.phase!=Running' -o json | kubectl delete -f -`
+```sh
+function deleteEvictedPods() {
+    environments=(
+        development
+        staging
+        production
+        traefik
+        kube-system
+        kube-public
+        kube-node-lease
+        default
+    )
+
+    for environment in "${environments[@]}"
+    do
+        echo "==================================================================================="
+        echo "==================================================================================="
+        echo "Removing evicted pods for namespace: \"${environment}\""
+        echo "---------------------------------------------------"
+
+        for each in $(kubectl get pods -n ${environment} | grep Evicted | awk '{print $1}');
+        do
+            kubectl delete pods $each -n ${environment}
+        done
+        echo "==================================================================================="
+        echo "==================================================================================="
+    done
+}
+```
 
 ## Contribution
 When submitting your helpful command, it would be doubly helpful to include some context
