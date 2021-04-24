@@ -42,7 +42,6 @@ they aren't automatically removed.
 You can run the following command in a cron job to periodically sterilize your
 cluster of pods of inactive evicted pods.
 
-`kubectl get po --all-namespaces --field-selector 'status.phase!=Running' -o json | kubectl delete -f -`
 ```sh
 function deleteEvictedPods() {
     environments=(
