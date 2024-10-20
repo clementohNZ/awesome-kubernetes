@@ -72,6 +72,11 @@ function deleteEvictedPods() {
 }
 ```
 
+## Delete Everything in Namespace
+```sh
+kubectl delete all --all -n lube-backend-api-primary
+```
+
 ## Contribution
 When submitting your helpful command, it would be doubly helpful to include some context
 on why the command is useful.
